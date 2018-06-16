@@ -1,9 +1,7 @@
 package com.example.android.miwok;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,20 +51,20 @@ public class WordAdapter extends ArrayAdapter<Word>  {
         Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID miwok_text_view
-        TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
+        TextView miwokTextView = listItemView.findViewById(R.id.miwok_text_view);
         // Get the version name from the current AndroidFlavor object and
         // set this text on the name TextView
-        miwokTextView.setText(currentWord.getMiwokTranslation());
+        miwokTextView.setText(currentWord.getMiwokTranslationId());
 
         // Find the TextView in the list_item.xml layout with the ID defaut_text_view
-        TextView defaultTextView = (TextView) listItemView.findViewById(R.id.defaut_text_view);
+        TextView defaultTextView = listItemView.findViewById(R.id.defaut_text_view);
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
-        defaultTextView.setText(currentWord.getDefaultTranslation());
+        defaultTextView.setText(currentWord.getDefaultTranslationId());
 
 
         // Find the ImageView in the list_item.xml layout with the ID image.
-        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
+        ImageView imageView = listItemView.findViewById(R.id.image);
 
         // Set the ImageView to the image resource specified in the current Word
         // Check if an image is provided for this word or not
